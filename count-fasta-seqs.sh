@@ -94,3 +94,13 @@ echo "$@"
 #
 # ADD YOUR CODE BELOW:
 
+filepath=`/home/mohammad-sujaur-rahman/au-bootcamp-git-intro/tests/test_nested_files/input/*`
+total_count=0
+for filepath in "$@"
+do
+count=`grep -c "^>" $filepath`
+filename=`basename $filepath`
+echo "$count $filename"
+total_count=`expr $total_count + $count`
+done
+echo "$total_count"
